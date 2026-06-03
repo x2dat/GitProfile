@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Fira Code', source-code-pro, Monaco, Consolas, monospace;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --glass-blur: blur(12px);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Theme Mappings */
+body.theme-glass-dark {
+  --bg: #07090e;
+  --sidebar-bg: #0c0f17;
+  --panel-bg: rgba(18, 22, 35, 0.65);
+  --panel-hover: rgba(26, 32, 50, 0.85);
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #f3f4f6;
+  --text-muted: #8e9cae;
+  --text-dark: #4b5563;
+  --accent: #8b5cf6;
+  --accent-glow: rgba(139, 92, 246, 0.3);
+  --accent-hover: #a78bfa;
+}
+
+body.theme-dracula {
+  --bg: #282a36;
+  --sidebar-bg: #1e1f29;
+  --panel-bg: #343746;
+  --panel-hover: #44475a;
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #f8f8f2;
+  --text-muted: #6272a4;
+  --text-dark: #44475a;
+  --accent: #bd93f9;
+  --accent-glow: rgba(189, 147, 249, 0.3);
+  --accent-hover: #ff79c6;
+}
+
+body.theme-nord {
+  --bg: #2e3440;
+  --sidebar-bg: #242933;
+  --panel-bg: #3b4252;
+  --panel-hover: #434c5e;
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #d8dee9;
+  --text-muted: #7e8f9f;
+  --text-dark: #4c566a;
+  --accent: #88c0d0;
+  --accent-glow: rgba(136, 192, 208, 0.3);
+  --accent-hover: #8fbcbb;
+}
+
+body.theme-cyberpunk {
+  --bg: #0c0817;
+  --sidebar-bg: #170d24;
+  --panel-bg: #221437;
+  --panel-hover: #2f1b4c;
+  --border: #ff007f;
+  --text: #00ffff;
+  --text-muted: #9f91cc;
+  --text-dark: #ff007f;
+  --accent: #ff007f;
+  --accent-glow: rgba(255, 0, 127, 0.35);
+  --accent-hover: #ff55aa;
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg);
+  color: var(--text);
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.15);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* Global inputs styling */
+input, select, textarea {
+  font-family: inherit;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  outline: none;
+  transition: var(--transition);
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-glow);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+/* Base panels */
+.glass-panel {
+  background: var(--panel-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border);
+  box-shadow: var(--glass-shadow);
+  transition: background 0.4s ease, border 0.4s ease;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.code-font {
+  font-family: var(--font-mono);
+}
+
+.app-grid {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Background glowing accents */
+.ambient-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(140px);
+  z-index: -1;
+  opacity: 0.12;
+  pointer-events: none;
+  transition: background 0.5s ease;
+}
+
+.glow-top-right {
+  top: -150px;
+  right: 10%;
+  background: var(--accent);
+}
+
+.glow-bottom-left {
+  bottom: -200px;
+  left: 5%;
+  background: var(--accent-hover);
+}
