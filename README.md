@@ -5,11 +5,9 @@
 [![Vite](https://img.shields.io/badge/Vite-8.0-646CFF?style=flat-glass&logo=vite)](https://vite.dev/)
 [![License](https://img.shields.io/badge/License-MIT-emerald?style=flat-glass)](LICENSE)
 <!-- Generated with GitProfile Studio -->
-<p align="center">
-  <a href="https://x2dat.github.io/GitProfile/">
-    <img src="https://img.shields.io/badge/Generated%20with-GitProfile%20Studio-blue?style=flat-square" alt="GitProfile Studio" />
-  </a>
-</p>
+<a href="https://x2dat.github.io/GitProfile/">
+  <img src="https://img.shields.io/badge/Generated%20with-GitProfile%20Studio-blue?style=flat-square" alt="GitProfile Studio" />
+</a>
 
 ---
 
