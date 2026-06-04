@@ -4,10 +4,6 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-6.0-3178C6?style=flat-glass&logo=typescript)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-8.0-646CFF?style=flat-glass&logo=vite)](https://vite.dev/)
 [![License](https://img.shields.io/badge/License-MIT-emerald?style=flat-glass)](LICENSE)
-
-**GitProfile Studio** is an interactive, visual drag-and-drop builder designed to craft stunning GitHub Profile READMEs and web portfolios in real-time. Built with dynamic CSS themes (Dracula, Nord, Cyberpunk, Glass-Dark) and a side-by-side Live GFM Renderer, it gives developers a visual canvas to edit header animations, check-grid tech stacks, statistics cards, and social links instantly. <br> <hr>
-Check it out: <a href="https://x2dat.github.io/GitProfile/" target="_blank" rel="noopener noreferrer">https://x2dat.github.io/GitProfile/</a>
-
 <!-- Generated with GitProfile Studio -->
 <p align="center">
   <a href="https://x2dat.github.io/GitProfile/">
@@ -16,6 +12,9 @@ Check it out: <a href="https://x2dat.github.io/GitProfile/" target="_blank" rel=
 </p>
 
 ---
+
+**GitProfile Studio** is an interactive, visual drag-and-drop builder designed to craft stunning GitHub Profile READMEs and web portfolios in real-time. Built with dynamic CSS themes (Dracula, Nord, Cyberpunk, Glass-Dark) and a side-by-side Live GFM Renderer, it gives developers a visual canvas to edit header animations, check-grid tech stacks, statistics cards, and social links instantly. <br> <hr>
+Check it out: <a href="https://x2dat.github.io/GitProfile/" target="_blank" rel="noopener noreferrer">https://x2dat.github.io/GitProfile/</a>
 
 ## Key Features 🚀
 
