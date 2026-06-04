@@ -8,6 +8,13 @@
 **GitProfile Studio** is an interactive, visual drag-and-drop builder designed to craft stunning GitHub Profile READMEs and web portfolios in real-time. Built with dynamic CSS themes (Dracula, Nord, Cyberpunk, Glass-Dark) and a side-by-side Live GFM Renderer, it gives developers a visual canvas to edit header animations, check-grid tech stacks, statistics cards, and social links instantly. <br> <hr>
 Check it out: <a href="https://x2dat.github.io/GitProfile/" target="_blank" rel="noopener noreferrer">https://x2dat.github.io/GitProfile/</a>
 
+<!-- Generated with GitProfile Studio -->
+<p align="center">
+  <a href="https://x2dat.github.io/GitProfile/">
+    <img src="https://img.shields.io/badge/Generated%20with-GitProfile%20Studio-blue?style=flat-square" alt="GitProfile Studio" />
+  </a>
+</p>
+
 ---
 
 ## Key Features 🚀
