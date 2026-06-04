@@ -10,6 +10,7 @@ interface PreviewPanelProps {
 export const PreviewPanel: React.FC<PreviewPanelProps> = ({ widgets }) => {
   const [activeTab, setActiveTab] = useState<'preview' | 'code'>('preview');
   const [copied, setCopied] = useState(false);
+  const [includeAttribution, setIncludeAttribution] = useState(true);
 
   // Compile GFM Markdown String from Widget Configurations
   const generateMarkdown = (): string => {
@@ -141,6 +142,10 @@ export const PreviewPanel: React.FC<PreviewPanelProps> = ({ widgets }) => {
       }
     });
 
+    if (includeAttribution) {
+      md += `\n\n---\n\n<!-- Generated with GitProfile Studio -->\n<p align="center">\n  <a href="https://x2dat.github.io/GitProfile/">\n    <img src="https://img.shields.io/badge/Generated%20with-GitProfile%20Studio-blue?style=flat-square" alt="GitProfile Studio" />\n  </a>\n</p>`;
+    }
+
     return md.trim();
   };
 
@@ -189,6 +194,21 @@ export const PreviewPanel: React.FC<PreviewPanelProps> = ({ widgets }) => {
       // Skip empty lines or line breaks
       if (!line) {
         flushList();
+        i++;
+        continue;
+      }
+
+      // Ignore HTML Comments
+      if (line.startsWith('<!--')) {
+        flushList();
+        i++;
+        continue;
+      }
+
+      // Horizontal Rule
+      if (line === '---') {
+        flushList();
+        elements.push(<hr key={`hr-${i}`} style={{ border: 'none', borderBottom: '1px solid var(--border)', margin: '16px 0' }} />);
         i++;
         continue;
       }
@@ -340,6 +360,19 @@ export const PreviewPanel: React.FC<PreviewPanelProps> = ({ widgets }) => {
             <FileCode size={14} />
             GFM Markdown
           </button>
+        </div>
+
+        <div className="attribution-toggle-container" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+          <input 
+            type="checkbox" 
+            id="attribution-toggle" 
+            checked={includeAttribution} 
+            onChange={(e) => setIncludeAttribution(e.target.checked)}
+            style={{ cursor: 'pointer', accentColor: 'var(--accent)' }}
+          />
+          <label htmlFor="attribution-toggle" style={{ cursor: 'pointer', userSelect: 'none' }}>
+            Add Attribution Badge
+          </label>
         </div>
 
         <button className="copy-md-btn glow-btn" onClick={handleCopy}>
